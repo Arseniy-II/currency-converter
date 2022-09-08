@@ -8,7 +8,7 @@ Features:
 7. React hooks + simple state management + simple request response logic
 
 How to do that
-- [ ] Setup basic react typescript template as init commit and Configure Eslint, typescript, webpack
+- [X] Setup basic react typescript template as init commit and Configure Eslint, typescript, webpack
 - [ ] Create develop branch
 - [ ] 1 feature: Add css modules and Create simple input numeric input and test for it
 - [ ] 2 feature: Add precomit and prepush hooks
