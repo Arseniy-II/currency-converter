@@ -9,7 +9,7 @@ Features:
 
 How to do that
 - [X] Setup basic react typescript template as init commit and Configure Eslint, typescript, webpack
-- [ ] Create develop branch
+- [X] Create develop branch
 - [ ] 1 feature: Add css modules and Create simple input numeric input and test for it
 - [ ] 2 feature: Add precomit and prepush hooks
 - [ ] 3 feature: Add CI/CD and sonarqube? so it will run lint and unit tests before alowing mergin PR and will check commit message
