@@ -1,0 +1,23 @@
+.label {
+  text-transform: uppercase;
+  color: $secondary-color;
+  font-size: 12px;
+  margin: 5px 0;
+}
+.inputBox {
+  display: flex;
+  border-bottom: 1px $hint-color solid;
+  padding: 2px 0;
+}
+.input {
+  flex: 1 1 auto;
+  font-size: 32px;
+  font-weight: 500;
+  width: 100%;
+}
+.suffix {
+  padding: 0 10px;
+  color: $secondary-color;
+  display: flex;
+  align-items: center;
+}

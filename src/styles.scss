@@ -1,5 +1,14 @@
-.wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+body {
+  font-family: sans-serif;
+}
+input {
+  border: none;
+  padding: 0;
+  outline: none;
+}
+:global {
+  #app {
+    display: flex;
+    justify-content: center;
+  }
 }
