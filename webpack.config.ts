@@ -42,6 +42,12 @@ const webpackConfig = (): Configuration => ({
                             modules: true,
                         },
                     },
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            additionalData:'@import "src/variables.scss";',
+                        },
+                    },
                 ],
             },
         ],
