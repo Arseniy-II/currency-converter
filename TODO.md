@@ -10,7 +10,7 @@ Features:
 How to do that
 - [X] Setup basic react typescript template as init commit and Configure Eslint, typescript, webpack
 - [X] Create develop branch
-- [ ] 1 feature: Add css modules and Create simple input numeric input and test for it
+- [X] 1 feature: Add css modules and Create simple input numeric input and test for it
 - [ ] 2 feature: Add pre-commit and pre-push hooks
 - [ ] 3 feature: Add CI/CD and sonarqube? so it will run lint and unit tests before allowing merging PR and will check the commit message
 - [ ] Create Release brunch and merge to master
@@ -21,3 +21,5 @@ How to do that
 - [ ] 8 feature: Add debouncing for currency update
 - [ ] 9 feature: Add info block
 - [ ] 10 feature (optional): Deploy it somewhere
+- [ ] 11 feature (optional): Try to configure jest without babel.config using [webpack only](https://jestjs.io/ru/docs/webpack) though it will be challenging considering typescript and css modules
+- [ ] 12 feature (optional): Remove data-testid from production build

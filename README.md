@@ -19,3 +19,6 @@ npm run dev
 - React
 - Webpack
 - Eslint
+- CSS modules
+- Global css variables
+- Unit testing: Jest + react-testing-library
