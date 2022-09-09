@@ -14,7 +14,7 @@ const webpackConfig = (): Configuration => ({
         ? {}
         : { devtool: 'eval-source-map' }),
     resolve: {
-        extensions: ['.ts', '.tsx', '.js'],
+        extensions: ['.ts', '.tsx', '.js', '.css', '.scss'],
         plugins: [new TsconfigPathsPlugin({ configFile: './tsconfig.json' })],
     },
     output: {
@@ -33,7 +33,16 @@ const webpackConfig = (): Configuration => ({
             },
             {
                 test: /\.s?css$/,
-                use: ['style-loader', 'css-loader'],
+                use: [
+                    "style-loader",
+                    {
+                        loader: "css-loader",
+                        options: {
+                            importLoaders: 1,
+                            modules: true,
+                        },
+                    },
+                ],
             },
         ],
     },
