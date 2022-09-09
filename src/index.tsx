@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import CurrencyConverterComponent from './Components/CurrencyConverterComponent';
+import './styles.scss';
 
 ReactDOM.render(
     <React.StrictMode>
-        <App />
+        <CurrencyConverterComponent />
     </React.StrictMode>,
     document.getElementById('app')
 );
