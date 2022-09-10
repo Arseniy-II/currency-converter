@@ -22,3 +22,4 @@ npm run dev
 - CSS modules
 - Global css variables
 - Unit testing: Jest + react-testing-library
+- git hooks with Husky
