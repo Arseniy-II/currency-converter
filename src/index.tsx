@@ -1,11 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import CurrencyConverterComponent from './Components/CurrencyConverterComponent';
 import './styles.scss';
 
-ReactDOM.render(
+const root = createRoot(document.getElementById('app'));
+root.render(
     <React.StrictMode>
         <CurrencyConverterComponent />
-    </React.StrictMode>,
-    document.getElementById('app')
+    </React.StrictMode>
 );
