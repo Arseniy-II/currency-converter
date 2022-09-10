@@ -1,0 +1,17 @@
+.label {
+  @include input-label;
+}
+
+:export {
+  inputBorder: $input-border;
+  inputPadding: $input-padding;
+  droptDownIndicatorColor: $color-1;
+  inputFontSize: 24px;
+  optionFontSize: 18px;
+}
+.flagIcon {
+  width: 35px;
+  height: 25px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
