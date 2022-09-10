@@ -12,7 +12,7 @@ How to do that
 - [X] Create develop branch
 - [X] 1 feature: Add css modules and Create simple input numeric input and test for it
 - [X] 2 feature: Add pre-commit and pre-push hooks
-- [ ] 3 feature: Add CI/CD and sonarqube? so it will run lint and unit tests before allowing merging PR and will check the commit message
+- [X] 3 feature: Add CI/CD and sonarqube? so it will run lint and unit tests before allowing merging PR
 - [ ] Create Release brunch and merge to master
 - [ ] 4 feature: Create flag select component with styles
 - [ ] 5 feature: Create number input component with styles
