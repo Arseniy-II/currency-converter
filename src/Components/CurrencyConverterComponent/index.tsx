@@ -1,5 +1,5 @@
 import React from 'react';
-import NumberInputComponent from '../NumberInputComponent'
+import NumberInputComponent from '../NumberInputComponent';
 import styles from './styles.scss';
 
 const Index: React.FC = () => {
