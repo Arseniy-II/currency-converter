@@ -13,13 +13,11 @@ How to do that
 - [X] 1 feature: Add css modules and Create simple input numeric input and test for it
 - [X] 2 feature: Add pre-commit and pre-push hooks
 - [X] 3 feature: Add CI/CD and sonarqube? so it will run lint and unit tests before allowing merging PR
-- [ ] Create Release brunch and merge to master
 - [ ] 4 feature: Create flag select component with styles
-- [ ] 5 feature: Create number input component with styles
-- [ ] 6 feature: Create parent component with select components, number input components, and submit button with hardcoded exchange rate
-- [ ] 7 feature: Add request for currency rates, update currency rate with each input change
-- [ ] 8 feature: Add debouncing for currency update
-- [ ] 9 feature: Add info block
+- [ ] 5 feature: Create parent component with select components, number input components, and submit button with hardcoded exchange rate
+- [ ] 6 feature: Add request for currency rates, update currency rate with each input change
+- [ ] 7 feature: Add debouncing for currency update
+- [ ] 8 feature: Add info block
 - [ ] feature (optional): Deploy it somewhere
 - [ ] feature (optional): Try to configure jest without babel.config using [webpack only](https://jestjs.io/ru/docs/webpack) though it will be challenging considering typescript and css modules
 - [ ] feature (optional): Remove data-testid from production build
