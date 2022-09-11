@@ -6,6 +6,11 @@ input {
   padding: 0;
   outline: none;
 }
+button {
+  background: none;
+  border: none;
+  padding: 0;
+}
 :global {
   #app {
     display: flex;

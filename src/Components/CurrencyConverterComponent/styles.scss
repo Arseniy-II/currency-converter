@@ -6,3 +6,53 @@
   box-sizing: border-box;
   margin-top: 50px;
 }
+.gap {
+  width: 47px;
+  margin: 0 21px;
+  flex: 0 0 auto;
+}
+.inputBox {
+  display: flex;
+  align-items: center;
+}
+.currencySelect {
+  flex: 1 1 50%;
+}
+.marginTop {
+  margin-top: 34px;
+}
+.changeButton {
+  margin: 0 21px;
+  width: 47px;
+  flex: 0 0 auto;
+  transform: translateY(10px);
+}
+.submitButton {
+  width: 100%;
+  margin-top: 76px;
+  margin-bottom: 0;
+}
+.icon {
+  width: 6px;
+  height: 6px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  border: 3px solid $color-7;
+  display: inline-flex;
+  margin-right: 10px;
+}
+.currencyRateBox {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 500;
+}
+.infoBox {
+  margin-top: 40px;
+}
+.noticeBox {
+  padding-right: 10px;
+  margin-top: 20px;
+  color: $color-2;
+  font-size: 14px;
+}
