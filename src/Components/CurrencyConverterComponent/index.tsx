@@ -2,6 +2,7 @@ import React, {Fragment, useState, useCallback, useEffect} from 'react';
 import NumberInputComponent from '../NumberInputComponent';
 import ChangeButtonComponent from '../ChangeButtonComponent';
 import CurrencySelectComponent, {OptionType} from '../CurrencySelectComponent';
+import LoadingComponent from '../LoadingComponent';
 import SubmitButtonComponent from '../SubmitButtonComponent';
 import styles from './styles.scss';
 import classnames from 'classnames';
@@ -121,6 +122,7 @@ const Index: React.FC = () => {
             { isSubmitted && <div className={styles.infoBox}>
                 <div className={styles.currencyRateBox}>
                     <div className={styles.icon}/> 1 {from} = {rate} {to}
+                    {requestState === RequestState.Loading && <LoadingComponent className={styles.loadingIcon}/>}
                 </div>
                 <div className={styles.noticeBox}>
                     All figures are live mid-market rates, which are for informational purposes only. To see the rates for money transfer, please select sending money option.
