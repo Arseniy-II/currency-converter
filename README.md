@@ -8,8 +8,7 @@ Refer to [TODO list](./TODO.md) for more info
 It is not production quality code yet!
 1. no debounce for fetch
 2. there is not enough tests
-3. there is no proper isLoading
-4. error response is not handled properly
+3. error response is not handled properly
 
 ### Pre requests
 - node version: v16.15.1
