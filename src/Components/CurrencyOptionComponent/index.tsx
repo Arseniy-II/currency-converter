@@ -8,7 +8,6 @@ interface currencyOptionProps {
 
 const CurrencyOptionComponent: React.FC<currencyOptionProps> = (props) => {
     const {currency} = props;
-    console.log(styles);
     return (
         <Fragment>
             <CurrencyFlag currency={currency } className={styles.flagIcon}/>
