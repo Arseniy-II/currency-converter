@@ -48,11 +48,19 @@
   font-weight: 500;
 }
 .infoBox {
-  margin-top: 40px;
+  margin-top: 60px;
+  margin-bottom: 5px;
 }
 .noticeBox {
   padding-right: 10px;
   margin-top: 20px;
   color: $color-2;
   font-size: 14px;
+}
+.numberInput {
+  flex: 1 1 auto;
+}
+.error {
+  margin-top: 10px;
+  color: $color-8;
 }

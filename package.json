@@ -25,9 +25,8 @@
   "dependencies": {
     "add": "^2.0.6",
     "classnames": "^2.3.1",
-    "country-flag-icons": "^1.5.5",
-    "country-to-currency": "^1.0.5",
     "react": "^18.2.0",
+    "react-currency-flags": "^0.1.2",
     "react-dom": "^18.2.0",
     "react-select": "^5.4.0"
   },
@@ -47,7 +46,7 @@
     "@typescript-eslint/parser": "^5.36.2",
     "babel-plugin-react-remove-properties": "^0.3.0",
     "css-loader": "^6.7.1",
-    "eslint": "^8.23.0",
+    "eslint": "8.22.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-react": "^7.31.7",
     "eslint-plugin-react-hooks": "^4.6.0",
