@@ -1,4 +1,5 @@
-import React, {Fragment, useState, useCallback, useEffect} from 'react';
+import React, {Fragment, useState, useCallback, useMemo} from 'react';
+import {debounce} from 'lodash';
 import NumberInputComponent from '../NumberInputComponent';
 import ChangeButtonComponent from '../ChangeButtonComponent';
 import CurrencySelectComponent, {OptionType} from '../CurrencySelectComponent';
@@ -23,10 +24,11 @@ const Index: React.FC = () => {
     const [rate, setRate] = useState('');
     const [requestState, setRequestState] = useState<RequestStateType>(RequestState.Success);
     const [isSubmitted, setIsSubmitted] = useState(false);
-    const [isLustUpdateFromResponse, setIsLustUpdateFromResponse] = useState(false);
-    const [isLastUpdateFromResultInput, setIsLastUpdateFromResultInput] = useState(false);
 
-    const fetchRates = useCallback((to: string, from: string, amount: string, reverse?: boolean): void => {
+    const fetchRates = useCallback((to: string, from: string, amount: string, isSubmitted?: boolean, reverse?: boolean): void => {
+        if (!isSubmitted) {
+            return;
+        }
         setRequestState(RequestState.Loading);
         const url= `https://my.transfergo.com/api/fx-rates?from=${to}&to=${from}&amount=${amount}`;
         fetch(url)
@@ -42,11 +44,9 @@ const Index: React.FC = () => {
                     // it means rate is already fetched and set
                     // we can calculate revers rate here and set it, but it will be inconsistent with actual rate
                     setAmount(data.toAmount);
-                    setIsLustUpdateFromResponse(true);
                 } else {
                     setRate(data.rate);
-                    setResult( data.toAmount);
-                    setIsLustUpdateFromResponse(true);
+                    setResult(data.toAmount);
                 }
                 setRequestState(RequestState.Success);
             })
@@ -55,54 +55,46 @@ const Index: React.FC = () => {
             });
     }, []);
 
+    const debouncedFetchRates = useMemo(
+        () => debounce(fetchRates, 250),
+        [fetchRates]
+    );
+
     const handleSubmit = useCallback(() => {
-        setIsSubmitted(true);
-    }, []);
-
-    const handleAmountChange = useCallback((event) => {
-        setAmount((event.target as HTMLInputElement).value);
-        setIsLustUpdateFromResponse(false);
-        setIsLastUpdateFromResultInput(false);
-    }, []);
-
-    const handleResultChange = useCallback((event) => {
-        setResult((event.target as HTMLInputElement).value);
-        setIsLustUpdateFromResponse(false);
-        setIsLastUpdateFromResultInput(true);
-    }, []);
+        const newIsSubmitted = true;
+        setIsSubmitted(newIsSubmitted);
+        fetchRates(from, to, amount, newIsSubmitted);
+    }, [amount, fetchRates, from, to]);
 
     const changeCurrency = useCallback(() => {
         setFrom(to);
         setTo(from);
-        setIsLustUpdateFromResponse(false);
-        setIsLastUpdateFromResultInput(false);
-    }, [to, from]);
+        fetchRates(to, from, amount, isSubmitted);
+    }, [to, from, fetchRates, amount, isSubmitted]);
 
     const handleToChange = useCallback((option: OptionType | null): void => {
-        setTo(option.value);
-        setIsLustUpdateFromResponse(false);
-        setIsLastUpdateFromResultInput(false);
-    }, []);
+        const newTo = option.value;
+        setTo(newTo);
+        fetchRates( from, newTo, amount, isSubmitted);
+    }, [amount, fetchRates, from, isSubmitted]);
 
     const handleFromChange = useCallback((option: OptionType | null): void => {
-        setFrom(option.value);
-        setIsLustUpdateFromResponse(false);
-        setIsLastUpdateFromResultInput(false);
-    }, []);
+        const newFrom = option.value;
+        setFrom(newFrom);
+        fetchRates(newFrom, to, amount, isSubmitted);
+    }, [amount, fetchRates, isSubmitted, to]);
 
-    useEffect(() => {
-        // Do not fetch if user didn't pressed submit button yet OR if last values change came from back-end response
-        if (isSubmitted === false || isLustUpdateFromResponse) {
-            return;
-        }
-        if (!isLastUpdateFromResultInput) {
-            // Do ordinary fetch
-            fetchRates(from, to, amount);
-        } else {
-            // Do reverse fetch when user changes result input value
-            fetchRates(to, from, result, true);
-        }
-    }, [fetchRates, to, from, amount, result, isSubmitted, isLustUpdateFromResponse, isLastUpdateFromResultInput]);
+    const handleAmountChange = useCallback((event) => {
+        const newAmount = (event.target as HTMLInputElement).value;
+        setAmount(newAmount);
+        debouncedFetchRates(from, to, newAmount, isSubmitted);
+    }, [debouncedFetchRates, from, isSubmitted, to]);
+
+    const handleResultChange = useCallback((event) => {
+        const newResult = (event.target as HTMLInputElement).value;
+        setResult(newResult);
+        debouncedFetchRates(to, from, newResult, isSubmitted, true);
+    }, [debouncedFetchRates, from, isSubmitted, to]);
 
     return (
         <div className={styles.box}>

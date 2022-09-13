@@ -16,13 +16,14 @@ How to do that
 - [X] 4 feature: Create flag select component with styles
 - [X] 5 feature: Create parent component with select components, number input components, and submit button with hardcoded exchange rate
 - [X] 6 feature: Add request for currency rates, update currency rate with each input change
-- [ ] 7 feature: Add debouncing for currency update
+- [X] 7 feature: Add debouncing for currency update
 - [X] 8 feature: Add info block
 - [X] 9 feature: provide custom countries list to avoid dublications
 - [ ] feature (optional): Deploy it somewhere
 - [ ] feature (optional): Try to configure jest without babel.config using [webpack only](https://jestjs.io/ru/docs/webpack) though it will be challenging considering typescript and css modules
 - [ ] feature (optional): Remove data-testid from production build
 - [ ] feature (optional): improve linter (specifically for scss files) 
+- [ ] feature (optional): Refactor?
 - [ ] feature (optional): Add prettier?
 - [ ] feature (optional): Add commit message check and feature branch naming check
 - [ ] feature (optional): Add squash commit when mere branches in git and check is it possible to convert feature branch name to proper commit message on PR
