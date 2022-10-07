@@ -19,6 +19,11 @@ How to do that
 - [X] 7 feature: Add debouncing for currency update
 - [X] 8 feature: Add info block
 - [X] 9 feature: provide custom countries list to avoid dublications
+- [ ] 10 feature: fix all TODO first
+- [ ] 11 feature: [CurrencyConverterComponent](./src/Components/CurrencyConverterComponent/index.tsx) update fetch mechanics by canceling previous request when sending new request
+- [ ] 12 feature: improve [CurrencyConverterComponent](./src/Components/CurrencyConverterComponent/index.tsx) [try catch logic](https://www.youtube.com/shorts/ITogH7lJTyE)
+- [ ] 13 feature: [CurrencyConverterComponent](./src/Components/CurrencyConverterComponent/index.tsx) write tests
+- [ ] 14 feature: add sonarqube analytics
 - [ ] feature (optional): Deploy it somewhere
 - [ ] feature (optional): Try to configure jest without babel.config using [webpack only](https://jestjs.io/ru/docs/webpack) though it will be challenging considering typescript and css modules
 - [ ] feature (optional): Remove data-testid from production build

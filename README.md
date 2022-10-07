@@ -33,3 +33,5 @@ npm run dev
 - Unit testing: Jest + react-testing-library
 - git hooks with Husky
 - GitHub actions
+- git branching strategy
+- Conventional Commits
