@@ -16,6 +16,9 @@ enum RequestState {
 
 type RequestStateType = keyof typeof RequestState;
 
+// TODO add prop types as they will add check during run time
+// write tests and as the result refactor that whole component
+
 const Index: React.FC = () => {
     const [from, setFrom] = useState('EUR');
     const [to, setTo] = useState('GBP');

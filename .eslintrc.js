@@ -1,3 +1,4 @@
+// TODO fix eslint disable
 // eslint-disable-next-line no-undef
 module.exports = {
     'settings': {

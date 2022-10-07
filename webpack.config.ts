@@ -7,7 +7,8 @@ import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
 interface Configuration extends WebpackConfiguration {
     devServer?: WebpackDevServerConfiguration;
 }
-
+// TODO provide better production vs development
+// One thing is how to move some libraries to separate chunks (so browser will cache them and will fetch only once)
 const webpackConfig = (): Configuration => ({
     entry: './src/index.tsx',
     ...(process.env.production || !process.env.development
@@ -34,9 +35,9 @@ const webpackConfig = (): Configuration => ({
             {
                 test: /\.s?css$/,
                 use: [
-                    "style-loader",
+                    'style-loader',
                     {
-                        loader: "css-loader",
+                        loader: 'css-loader',
                         options: {
                             importLoaders: 1,
                             modules: true,
